@@ -3,8 +3,8 @@ import utls as u
 
 ph = "./unsorted/"
 
-def move(iteminfo):
-    for ext , name in iteminfo.items():
+def move(fileinfo):
+    for ext , name in fileinfo.items():
         if ext in u.APPLICATION_EXTENSIONS:
             s.move(ph + name + ext,"./sorted/applications")
         elif ext in u.AUDIO_EXTENSIONS:

@@ -1,5 +1,5 @@
 import os
 
 def scan(root):
-    items = os.listdir(root)
-    return items
+    files = os.listdir(root)
+    return files
