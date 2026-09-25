@@ -7,7 +7,17 @@ def detect(files):
         if file[0] != '.':
             if '.' in file:
                 info = Path(file)
-                fileinfo[info.suffix] = info.stem
+                if info.suffix in fileinfo.keys():
+                    lst = fileinfo[info.suffix]
+                    lst.append(info.stem)
+                    fileinfo[info.suffix] = lst
+                else:
+                    fileinfo[info.suffix] = [info.stem]
             else:
-                fileinfo['.dir'] = file
+                if '.dir' in fileinfo.keys():
+                    lst = fileinfo['.dir']
+                    lst.append(file)
+                    fileinfo['.dir'] = lst
+                else:
+                    fileinfo['.dir'] = [file]
     return fileinfo
