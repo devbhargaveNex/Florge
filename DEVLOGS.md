@@ -98,3 +98,39 @@ Current progress:
 ## Notes
 
 Compared to the Expense Tracker, I spent less time figuring out project setup and more time planning the architecture before writing code. The experience from the previous project made the initial development smoother and more structured.
+
+---
+
+# DevLog 4
+
+**Date:** 27/9/26
+**Work Time:** Short session
+
+## Goals
+
+* Continue the refactor to support the new dictionary-of-lists design.
+* Update `operations.py` to work with multiple files per extension.
+
+## Completed
+
+* Refactored `operations.py` for the new dictionary design.
+* Updated the file count so it counts the actual files stored inside the lists rather than the number of dictionary keys.
+* Added an exit option to the operations menu.
+* Added `.gitignore` entries for temporary files and Python cache files.
+* Tested the refactor and merged the PR into `main`.
+
+## What I Learned
+
+* A dictionary can map one key to a list when one category can contain multiple values.
+* Changing a data structure means each part of the workflow that consumes it needs to be reconsidered.
+* Refactoring file-by-file makes it easier to follow how a data-model change propagates through the program.
+
+## Problems
+
+* The previous dictionary design represented one file per extension, so the file count was based on dictionary keys rather than the actual number of files.
+* `operations.py` needed to be adapted to the new dictionary-of-lists structure.
+
+## Next Session
+
+* Continue the refactor through the next file in the workflow.
+* Test each component against the new dictionary design as it is reached.
